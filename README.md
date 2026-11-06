@@ -66,7 +66,18 @@ project/
 ```
 
 ---
+## Visualizations
 
+### Top Products by Revenue
+![Top Products](visualizations/top_products.png)
+
+### Monthly Sales Trend
+![Monthly Sales](visualizations/monthly_sales.png)
+
+### Profit by Sub-Category
+![Profit by Sub-Category](visualizations/profit_by_subcategory.png)
+
+---
 ## ⚙️ Methodology
 
 **1. Data Inspection and Cleaning**
