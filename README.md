@@ -59,7 +59,7 @@ The highest-earning product is the **Canon imageCLASS 2200 Advanced Copier** wit
 | 4 | HON 5400 Series Task Chairs for Big and Tall | $21,870.58 |
 | 5 | GBC DocuBind TL300 Electric Binding System | $19,823.48 |
 
-![Top 10 Products by Revenue](top_products.png)
+![Top 10 Products by Revenue](visualizations/top_products.png)
 
 ### 2. Highest sales months
 
@@ -78,7 +78,7 @@ The highest-earning product is the **Canon imageCLASS 2200 Advanced Copier** wit
 
 The **West** is the best performer on sales, profit and margin. The **Central** region has the second-lowest sales of the four but the weakest profit and by far the lowest margin (7.92%), which points to heavy discounting or low-margin products there.
 
-![Monthly Sales](monthly_sales.png)
+![Monthly Sales](visualizations/monthly_sales.png)
 
 ### 4. Sales and profit trends
 
@@ -94,9 +94,9 @@ The **West** is the best performer on sales, profit and margin. The **Central** 
 - Monthly profit is volatile. The largest monthly loss was in January 2015 (about -$3,281).
 - A mild negative correlation (-0.22) between discount and profit suggests that higher discounts tend to reduce profit.
 
-![Monthly Sales Trend](sales_trend.png)
+![Monthly Sales Trend](visualizations/sales_trend.png)
 
-![Monthly Profit Trend](profit_trend.png)
+![Monthly Profit Trend](visualizations/profit_trend.png)
 ## Deeper Insights
 
 ### Discounts and profit
@@ -109,12 +109,12 @@ There is a mild negative correlation (-0.22) between discount and profit. Groupi
 | 21-40% | -$77.86 |
 | Above 40% | -$106.71 |
 
-![Discount vs Profit](discount_vs_profit.png)
+![Discount vs Profit](visualizations/discount_vs_profit.png)
 
 ### Profit by sub-category
 Three sub-categories lose money overall: **Tables (about -$17,725)**, **Bookcases (about -$3,473)** and **Supplies (about -$1,189)**. The most profitable are **Copiers (about $55,618)**, **Phones (about $44,516)** and **Accessories (about $41,937)**. By category, Technology ($145,455) and Office Supplies ($122,491) earn most of the profit, while Furniture makes only $18,451 on $741,999 in sales, a margin of about 2.5%.
 
-![Profit by Sub-Category](profit_by_subcategory.png)
+![Profit by Sub-Category](visualizations/profit_by_subcategory.png)
 
 ### Products that lose money
 The biggest losses come from the **Cubify CubeX 3D Printer (Double Head Print)** at about -$8,880 and the **Lexmark MX611dhe Monochrome Laser Printer** at about -$4,590.
