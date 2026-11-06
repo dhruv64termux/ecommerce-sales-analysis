@@ -1,7 +1,27 @@
-# E-commerce Sales Data Analysis
+# 🛒 E-commerce Sales Data Analysis
 
-An end-to-end analysis of an online store's sales performance using Python, Pandas, SQL (SQLite) and Matplotlib/Seaborn. The project answers four business questions about products, months, regions and sales/profit trends.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
+![SQL](https://img.shields.io/badge/SQL-SQLite-003B57)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
+### Turning Retail Data into Business Insights
+
+An end-to-end data analytics project using Python, Pandas, SQL and data visualization.
+## 📑 Table of Contents
+
+- [Objective](#objective)
+- [Dataset](#dataset)
+- [Tools and Technologies](#tools-and-technologies)
+- [Project Structure](#project-structure)
+- [Methodology](#methodology)
+- [Key Findings](#key-findings)
+- [Visualizations](#visualizations)
+- [Recommendations](#recommendations)
+- [Limitations](#limitations)
+- [How to Run](#how-to-run)
+- [Author](#author)
 ## Objective
 
 1. Which products generate the highest revenue?
@@ -146,6 +166,11 @@ The biggest losses come from the **Cubify CubeX 3D Printer (Double Head Print)**
 
 Charts are saved to `visualizations/`, the SQLite database to `data/ecommerce.db`, and the SQL queries to `sql/queries.sql`.
 
-## Author
+## 👨‍💻 Author
 
-Dhruv, BSc Data Science student
+**Dhruv Rajpurohit**
+
+BSc Data Science Student
+
+- LinkedIn: [Connect with me](https://linkedin.com/in/dhruv-rajpurohit-622836359/)
+- GitHub: [View my repositories](https://github.com/dhruv64termux)
