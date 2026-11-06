@@ -1,302 +1,151 @@
-# 📊 E-Commerce Sales Data Analysis
+# E-commerce Sales Data Analysis
 
-An end-to-end analysis of an online store's sales performance using **Python, Pandas, SQL (SQLite), Matplotlib, and Seaborn**.
+An end-to-end analysis of an online store's sales performance using Python, Pandas, SQL (SQLite) and Matplotlib/Seaborn. The project answers four business questions about products, months, regions and sales/profit trends.
 
-This project answers four important business questions related to products, monthly sales, regional performance, and sales and profit trends.
-
----
-
-## 🎯 Objective
-
-The project aims to answer the following business questions:
+## Objective
 
 1. Which products generate the highest revenue?
 2. Which months have the highest sales?
 3. Which regions perform best?
 4. What are the sales and profit trends?
 
----
+## Dataset
 
-## 📁 Dataset
+- **Source:** Sample Superstore dataset (Kaggle)
+- **Size:** 9,994 rows and 21 columns
+- **Period covered:** 3 January 2014 to 30 December 2017
+- **Key columns:** Order Date, Region, Category, Sub-Category, Product Name, Sales, Quantity, Discount, Profit
 
-- **Source:** Sample Superstore Dataset (Kaggle)
-- **Dataset Size:** 9,994 rows and 21 columns
-- **Period Covered:** 3 January 2014 – 30 December 2017
-- **Key Columns:** Order Date, Region, Category, Sub-Category, Product Name, Sales, Quantity, Discount, Profit.
+## Tools and Technologies
 
----
+- Python 3 (Anaconda distribution)
+- Pandas and NumPy for data cleaning and analysis
+- Matplotlib and Seaborn for visualization
+- SQLite (via Python's `sqlite3`) for SQL queries
+- Jupyter Notebook
 
-## 🛠️ Tools and Technologies
+## Project Structure
 
-| Tool / Technology | Purpose |
-|---|---|
-| Python 3 (Anaconda) | Programming and analysis |
-| Pandas | Data cleaning and manipulation |
-| NumPy | Numerical operations |
-| Matplotlib | Data visualization |
-| Seaborn | Statistical visualization |
-| SQLite | SQL queries and database management |
-| Jupyter Notebook | Development environment |
-
----
-
-## 📂 Project Structure
-
-```text
+```
 project/
-│
-├── data/
-│   ├── superstore.csv
-│   └── ecommerce.db
-│
-├── notebooks/
-│   └── analysis.ipynb
-│
-├── sql/
-│   └── queries.sql
-│
-├── visualizations/
-│   └── charts.png
-│
-├── reports/
-│   ├── final_report
-│   └── analysis.html
-│
+├── data/               # raw CSV (superstore.csv) and SQLite database (ecommerce.db)
+├── notebooks/          # analysis notebook
+├── sql/                # queries.sql with the SQL for all four questions
+├── visualizations/     # saved charts (PNG)
+├── reports/            # final report and HTML export of the notebook
 └── README.md
 ```
 
-## ⚙️ Methodology
+## Methodology
 
-**1. Data Inspection and Cleaning**
-- Checked data types, missing values, and duplicate rows.
-- No missing values or duplicate rows were found.
-- Converted `Order Date` into datetime format.
+1. **Data inspection and cleaning:** checked data types, missing values and duplicate rows. No missing values or duplicate rows were found. Converted `Order Date` to a datetime type.
+2. **Analysis in Pandas:** grouped sales and profit by product, month and region, and plotted the results.
+3. **Analysis in SQL:** loaded the data into SQLite and wrote equivalent queries for each question (see `sql/queries.sql`).
+4. **Validation:** compared the SQL results with the Pandas results to confirm they match.
 
-**2. Data Analysis Using Pandas**
-- Grouped sales and profit by product, month, and region.
-- Calculated important business metrics.
-- Created visualizations to identify trends.
+## Key Findings
 
-**3. SQL Analysis**
-- Loaded the dataset into SQLite.
-- Wrote SQL queries to answer all four business questions.
-- Stored queries in `sql/queries.sql`.
+**Overall:** total sales of **$2,297,200.86**, total profit of **$286,397.02**, and an overall profit margin of **12.47%**.
 
-**4. Validation**
-- Compared SQL results with Pandas results.
-- Verified that both approaches produced matching results.
+### 1. Top products by revenue
 
----
-
-## 📈 Key Findings
-
-### Overall Business Performance
-
-| Metric | Value |
-|---|---:|
-| Total Sales | $2,297,200.86 |
-| Total Profit | $286,397.02 |
-| Overall Profit Margin | 12.47% |
-
-### 1. 🏆 Top Products by Revenue
-
-The **Canon imageCLASS 2200 Advanced Copier** generated the highest revenue, with approximately $61,600 in sales, more than double the second-ranked product.
-
-Office machines and equipment dominate the top-performing products.
+The highest-earning product is the **Canon imageCLASS 2200 Advanced Copier** with about **$61,600** in sales, more than double the second-placed product. Office machines and equipment (copiers, binding machines, printers, videoconferencing) dominate the top 10.
 
 | Rank | Product | Sales |
-|---:|---|---:|
+|---|---|---|
 | 1 | Canon imageCLASS 2200 Advanced Copier | $61,599.82 |
 | 2 | Fellowes PB500 Electric Punch Plastic Comb Binding Machine | $27,453.38 |
 | 3 | Cisco TelePresence System EX90 Videoconferencing Unit | $22,638.48 |
 | 4 | HON 5400 Series Task Chairs for Big and Tall | $21,870.58 |
 | 5 | GBC DocuBind TL300 Electric Binding System | $19,823.48 |
 
-## Visualization: Top 10 Products by Revenue
-
 ![Top 10 Products by Revenue](top_products.png)
----
-### 2. 📅 Highest Sales Months
 
-The strongest sales months are:
+### 2. Highest sales months
 
-- November: $352,461
-- December: $325,294
-- September: $307,650
+**November ($352,461), December ($325,294) and September ($307,650)** are the strongest months, and these three months rank in the top three in every year from 2014 to 2017. **January ($94,925) and February ($59,751)** are the weakest. The pattern points to holiday-season demand and a September peak, followed by a post-holiday slump.
 
-The weakest months are:
+![Monthly sales](visualizations/monthly_sales.png)
 
-- January: $94,925
-- February: $59,751
+### 3. Regional performance
 
-November, December, and September consistently rank among the top three sales months across all four years.
-
-This indicates strong holiday-season demand and a post-holiday sales decline.
-
-**Visualization:** Monthly Sales
-
-### 3. 🌍 Regional Performance
-
-| Region | Sales | Profit | Profit Margin |
-|---|---:|---:|---:|
+| Region | Sales | Profit | Profit margin |
+|---|---|---|---|
 | West | $725,457.82 | $108,418.45 | 14.94% |
 | East | $678,781.24 | $91,522.78 | 13.48% |
 | Central | $501,239.89 | $39,706.36 | 7.92% |
 | South | $391,721.90 | $46,749.43 | 11.93% |
 
-**Key Insights:**
+The **West** is the best performer on sales, profit and margin. The **Central** region has the second-lowest sales of the four but the weakest profit and by far the lowest margin (7.92%), which points to heavy discounting or low-margin products there.
 
-- The West region performs best in sales, profit, and profit margin.
-- The Central region has the lowest profit margin at 7.92%.
-- The Central region requires further investigation into discounting and product mix.
+![Monthly Sales](monthly_sales.png)
 
-**Visualization:** Sales by Region
-
-### 4. 📊 Sales and Profit Trends
+### 4. Sales and profit trends
 
 | Year | Sales | Profit | Margin |
-|---|---:|---:|---:|
+|---|---|---|---|
 | 2014 | $484,247.50 | $49,543.97 | 10.2% |
 | 2015 | $470,532.51 | $61,618.60 | 13.1% |
 | 2016 | $609,205.60 | $81,795.17 | 13.4% |
 | 2017 | $733,215.26 | $93,439.27 | 12.7% |
 
-**Key Insights:**
+- Sales dipped slightly in 2015, then grew each year, rising about 51% from 2014 to 2017.
+- Profit grew faster than sales over the period (about 89%), mainly because margin improved from 10.2% in 2014 to around 13% afterwards.
+- Monthly profit is volatile. The largest monthly loss was in January 2015 (about -$3,281).
+- A mild negative correlation (-0.22) between discount and profit suggests that higher discounts tend to reduce profit.
 
-- Sales decreased slightly in 2015 and increased every year afterward.
-- Sales increased approximately 51% between 2014 and 2017.
-- Profit increased approximately 89% over the same period.
-- Profit margin improved from 10.2% in 2014 to around 13% afterward.
-- The largest monthly loss occurred in January 2015 (approximately -$3,281).
-- Discount and profit have a mild negative correlation of -0.22.
+![Monthly Sales Trend](sales_trend.png)
 
-**Visualizations:**
-- Monthly Sales Trend
-- Monthly Profit Trend
+![Monthly Profit Trend](profit_trend.png)
+## Deeper Insights
 
----
+### Discounts and profit
+There is a mild negative correlation (-0.22) between discount and profit. Grouping order lines by discount level shows where it turns harmful: discounts above 20% lose money on average.
 
-## 🔍 Deeper Insights
-
-### 1. Discounts and Profit
-
-A mild negative correlation of **-0.22** was observed between discount and profit.
-
-Grouping order lines by discount level revealed the following:
-
-| Discount Level | Average Profit per Order Line |
-|---|---:|
+| Discount level | Average profit per order line |
+|---|---|
 | 0% | $66.90 |
-| 1–20% | $26.50 |
-| 21–40% | -$77.86 |
+| 1-20% | $26.50 |
+| 21-40% | -$77.86 |
 | Above 40% | -$106.71 |
 
-Higher discount levels are associated with negative average profits.
+![Discount vs Profit](discount_vs_profit.png)
 
-**Visualization:** Discount vs Profit
+### Profit by sub-category
+Three sub-categories lose money overall: **Tables (about -$17,725)**, **Bookcases (about -$3,473)** and **Supplies (about -$1,189)**. The most profitable are **Copiers (about $55,618)**, **Phones (about $44,516)** and **Accessories (about $41,937)**. By category, Technology ($145,455) and Office Supplies ($122,491) earn most of the profit, while Furniture makes only $18,451 on $741,999 in sales, a margin of about 2.5%.
 
-### 2. Profit by Sub-Category
+![Profit by Sub-Category](profit_by_subcategory.png)
 
-**Loss-making sub-categories:**
+### Products that lose money
+The biggest losses come from the **Cubify CubeX 3D Printer (Double Head Print)** at about -$8,880 and the **Lexmark MX611dhe Monochrome Laser Printer** at about -$4,590.
 
-- Tables: Approximately -$17,725
-- Bookcases: Approximately -$3,473
-- Supplies: Approximately -$1,189
+## Recommendations
 
-**Most profitable sub-categories:**
+- Cap discounts at around 20%, since deeper discounts lead to losses on average.
+- Review pricing and discounting on **Tables and Bookcases**, which lose money despite high sales.
+- Build inventory and run campaigns ahead of **September to December**, and consider promotions in January and February to lift the slow months.
+- Investigate the **Central** region's discounting and product mix, since its margin is far below the West and East.
+- Review discount levels on products that sell well but lose money, because higher discounts are linked to lower profit.
+- Keep promoting high-revenue equipment lines (copiers, binding machines, printers) that drive a large share of sales.
 
-- Copiers: Approximately $55,618
-- Phones: Approximately $44,516
-- Accessories: Approximately $41,937
+## Limitations
 
-**Category-level insights:**
+- Based on a single dataset with no customer-level behaviour or marketing data.
+- Monthly totals combine four years, so one unusually strong year can influence the ranking (though the top months are consistent across years).
+- Sales and profit are in the dataset's original currency, with no adjustment for inflation.
+- Correlation between discount and profit does not prove that discounts cause lower profit.
 
-- Technology generated approximately $145,455 in profit.
-- Office Supplies generated approximately $122,491 in profit.
-- Furniture generated only approximately $18,451 in profit on $741,999 in sales, with a margin of around 2.5%.
+## How to Run
 
-**Visualization:** Profit by Sub-Category
+1. Clone or download this repository.
+2. Install the requirements: `pip install pandas numpy matplotlib seaborn notebook`
+3. Place `superstore.csv` in the `data/` folder.
+4. Open `notebooks/analysis.ipynb` in Jupyter Notebook.
+5. In the first cell, set `BASE` to the path of your project folder.
+6. Run all cells from top to bottom (**Kernel → Restart & Run All**).
 
-### 3. Products That Lose Money
+Charts are saved to `visualizations/`, the SQLite database to `data/ecommerce.db`, and the SQL queries to `sql/queries.sql`.
 
-The biggest product-level losses include:
+## Author
 
-| Product | Approximate Loss |
-|---|---:|
-| Cubify CubeX 3D Printer (Double Head Print) | -$8,880 |
-| Lexmark MX611dhe Monochrome Laser Printer | -$4,590 |
-
-These products require further investigation into pricing, discounts, and profitability.
-
----
-
-## 💡 Business Recommendations
-
-Based on the analysis, the following recommendations can help improve business performance:
-
-1. **Control Discounts:** Consider limiting discounts to around 20%, since deeper discounts are associated with average losses.
-2. **Review Product Pricing:** Investigate Tables and Bookcases, which generate losses despite their sales.
-3. **Seasonal Planning:** Increase inventory and marketing campaigns before September to December.
-4. **Improve Slow-Month Sales:** Consider promotional strategies during January and February.
-5. **Investigate Regional Performance:** Review discounting and product mix in the Central region.
-6. **Focus on Profitable Products:** Continue promoting high-revenue equipment lines such as copiers, binding machines, and printers.
-
----
-
-## ⚠️ Limitations
-
-- The analysis is based on a single dataset without customer-level behaviour or marketing data.
-- Monthly totals combine four years of data, so unusually strong years may influence rankings.
-- Sales and profit are reported in the dataset's original currency without inflation adjustment.
-- Correlation between discount and profit does not prove causation.
-
----
-
-## 🚀 How to Run the Project
-
-**Step 1:** Clone or download this repository.
-
-**Step 2:** Install the required libraries.
-
-```bash
-pip install pandas numpy matplotlib seaborn notebook
-```
-
-**Step 3:** Place `superstore.csv` inside the `data/` folder.
-
-**Step 4:** Open the Jupyter Notebook.
-
-```bash
-jupyter notebook
-```
-
-**Step 5:** Open:
-
-```text
-notebooks/analysis.ipynb
-```
-
-**Step 6:** In the first cell, set `BASE` to the path of your project folder.
-
-**Step 7:** Run all cells from top to bottom using:
-
-`Kernel → Restart & Run All`
-
-### Project Outputs
-
-- Charts are saved in `visualizations/`.
-- SQLite database is saved in `data/ecommerce.db`.
-- SQL queries are saved in `sql/queries.sql`.
-- Final report and HTML notebook export are saved in `reports/`.
-
----
-
-## 👨‍💻 Author
-
-**Dhruv Rajpurohit**
-
-BSc Data Science Student
-
----
-
-⭐ If you find this project useful, feel free to explore the repository!
+Dhruv, BSc Data Science student
