@@ -112,8 +112,9 @@ Office machines and equipment dominate the top-performing products.
 | 4 | HON 5400 Series Task Chairs for Big and Tall | $21,870.58 |
 | 5 | GBC DocuBind TL300 Electric Binding System | $19,823.48 |
 
-**Visualization:** Top 10 Products by Revenue
-top_products.png
+## Visualization: Top 10 Products by Revenue
+
+![Top 10 Products by Revenue](top_products.png)
 ---
 ### 2. 📅 Highest Sales Months
 
