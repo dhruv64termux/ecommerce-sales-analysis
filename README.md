@@ -65,19 +65,6 @@ project/
 └── README.md
 ```
 
----
-## Visualizations
-
-### Top Products by Revenue
-![Top Products](visualizations/top_products.png)
-
-### Monthly Sales Trend
-![Monthly Sales](visualizations/monthly_sales.png)
-
-### Profit by Sub-Category
-![Profit by Sub-Category](visualizations/profit_by_subcategory.png)
-
----
 ## ⚙️ Methodology
 
 **1. Data Inspection and Cleaning**
@@ -126,7 +113,8 @@ Office machines and equipment dominate the top-performing products.
 | 5 | GBC DocuBind TL300 Electric Binding System | $19,823.48 |
 
 **Visualization:** Top 10 Products by Revenue
-
+top_products.png
+---
 ### 2. 📅 Highest Sales Months
 
 The strongest sales months are:
