@@ -17,7 +17,6 @@ An end-to-end data analytics project using Python, Pandas, SQL and data visualiz
 - [Project Structure](#project-structure)
 - [Methodology](#methodology)
 - [Key Findings](#key-findings)
-- [Visualizations](#visualizations)
 - [Recommendations](#recommendations)
 - [Limitations](#limitations)
 - [How to Run](#how-to-run)
@@ -166,7 +165,7 @@ The biggest losses come from the **Cubify CubeX 3D Printer (Double Head Print)**
 
 Charts are saved to `visualizations/`, the SQLite database to `data/ecommerce.db`, and the SQL queries to `sql/queries.sql`.
 
-## 👨‍💻 Author
+## Author
 
 **Dhruv Rajpurohit**
 
